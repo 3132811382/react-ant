@@ -11,9 +11,9 @@ export default class ArticleService extends ApiService {
     return this.http.get(path, {params})
   }
 
-  deleteArticles(params) {
-    const path = `${this.path}?act=delA`
-    return this.http.post(path, {params})
+  userInfos() {
+    const path = `currentUser`
+    return this.http.get(path)
   }
 
   saveArticles (params) {

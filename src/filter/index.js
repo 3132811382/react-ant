@@ -45,6 +45,10 @@ class FilterFun {
   static formatterTimes =((val)=>{
     return moment(val).format('YYYY-MM-DD HH:mm:ss'); 
   })
+
+  static initTimes =((val)=>{
+    return moment(val).fromNow(true);
+  })
 }
 
 export default FilterFun

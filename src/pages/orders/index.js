@@ -5,7 +5,7 @@ import _ from 'lodash'
 import '../../style/pages.less'
 import TableSystem from '../../service/api/tableService'
 import FilterFun from '../../filter/index'
-import { DialogCustom } from '../../components/mode/addData'
+import DialogSystem from '../../components/mode/addData'
 
 const columns = [{
     title: '规则名称',
@@ -69,11 +69,11 @@ class orderList extends Component {
     })
   }
   showDialog = () => {
-    console.log(DialogCustom, 'pphhcs')
-    const Dialog = new DialogCustom()
+    console.log(DialogSystem, 'pphhcs')
+    const Dialog = new DialogSystem()
     const obj = {
       title: '添加数据',
-      width: 600,
+      width: 400,
     }
     Dialog.show({
       obj,
@@ -141,7 +141,7 @@ class orderList extends Component {
           </p>
         }
         type="info"
-         showIcon />
+        showIcon />
         <Table
           bordered={this.state.border}
           rowSelection={{

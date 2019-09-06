@@ -19,17 +19,11 @@ class DialogCustom extends React.Component {
       document.body.removeChild(container);
       container = null;
     }
-
     ReactDOM.render(
-      <DialogCustom {...params} metData={params}   onClose={closeHandle}>
+      <DialogCustom {...params} metData={params} onClose={closeHandle}>
       </DialogCustom>,
       container
     );
-  };
-  
-
-  onChange = e => {
-    this.setState({ text: e.target.value });
   };
 
 
@@ -37,17 +31,6 @@ class DialogCustom extends React.Component {
     this.props.onOk(this.state.text);
     this.props.onClose();
   };
-
-  handleSubmit = e => {
-    e.preventDefault();
-    this.props.form.validateFields((err, values) => {
-      if (!err) {
-        const { keys, names } = values;
-        console.log('Received values of form: ', values);
-        console.log('Merged values:', keys.map(key => names[key]));
-      }
-    });
-  }
 
   render() {
     const { children, onClose, metData, ...others } = this.props;
@@ -62,7 +45,7 @@ class DialogCustom extends React.Component {
         onCancel={onClose}
         okText="确认"
         cancelText="取消">
-        <Form labelCol={{ span: 5 }} wrapperCol={{ span: 12 }} onSubmit={this.handleSubmit}>
+        <Form className="login-form">
           <Form.Item label="规则名称">
             <Input  placeholder="请输入"/>
           </Form.Item>
@@ -71,9 +54,6 @@ class DialogCustom extends React.Component {
     );
   }
 }
-const WrappedAdvancedSearchForm = Form.create({ name: 'advanced_search' });
-// export default  DialogCustom;
-export {
-  DialogCustom,
-  WrappedAdvancedSearchForm,
-}
+
+
+export default DialogCustom

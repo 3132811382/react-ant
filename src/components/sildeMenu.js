@@ -36,7 +36,7 @@ class SildeMenu extends Component {
             <Icon type="pie-chart" />
             <span>统计</span>
           </Menu.Item>
-          <Menu.Item key="2">
+          <Menu.Item key="/homepage/dashboard">
             <Icon type="desktop" />
             <span>控制台</span>
           </Menu.Item>
@@ -49,7 +49,7 @@ class SildeMenu extends Component {
               </span>
             }>
             <Menu.Item key="5">账户</Menu.Item>
-            <Menu.Item key="/order_list">订单</Menu.Item>
+            <Menu.Item key="/homepage/order">订单</Menu.Item>
             <Menu.Item key="7">产品</Menu.Item>
           </SubMenu>
         </Menu>
